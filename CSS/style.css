@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    color: rgb(85, 84, 84);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFFFF;
+    font-family: 'Ubuntu Mono', monospace;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Header Starts */
+.nav {
+    height: 60px;
+    width: 100%;
+    background-color: #525151;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.nav .logo {
+    line-height: 60px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    line-height: 40px;
+}
+
+.nav ul li {
+    margin: 0px 10px;
+    padding: 0px 10px;
+    height: 90%;
+    line-height: 60px;
+    transition: all 0.2s ease;
+}
+
+.nav ul li.active, .nav ul li:hover {
+    border-bottom: 4px solid #FFFFFF;
+}
+
+.nav ul li a {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+}
+
+#check {
+    display: none;
+}
+
+.nav .fa {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #fcfcfc;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    .nav .logo {
+        text-align: center;
+    }
+
+    .nav ul {
+        background-color: rgba(212, 212, 212, 0.644);
+        flex-direction: column;
+        position: absolute;
+        text-align: center;
+        top: 60px;
+        right: -100%;
+        height: 50vh;
+        width: 40%;
+        transition: all 1s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .nav .fa {
+        display: block;
+    }
+
+    #check:checked~ul {
+        right: 0;
+    }
+
+    .nav ul li.active, .nav ul li:hover {
+        border-bottom: none;
+    }
+    
+    .nav ul li a {
+        color: rgb(43, 42, 42);
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .nav ul li:hover a {
+        color: #FFFFFF;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav ul {
+        width: 50%;
+    }
+}
+
+/* Header Ends */
+
+/* Sidebar Starts */
+
+.sidebar {
+    width: 50px;
+    height: auto;
+    background-color: rgb(219, 215, 215);
+    position: fixed;
+    left: 0;
+    top: 40%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #2b2b2b;
+    border-right: 1px solid #2b2b2b;
+    border-bottom: 1px solid #2b2b2b;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.sidebar a {
+    padding: 15px;
+}
+
+.sidebar a .fa {
+    color: #2b2b2b;
+    font-size: 20px;
+}
+
+.sidebar a:hover .fa{
+    color: #8d8d8d;
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 35px;
+    }
+
+    .sidebar a {
+        padding: 10px;
+    }
+
+    .sidebar a .fa {
+        font-size: 17px;
+    }
+}
+
+/* Sidebar Ends */
+
+/* Pages Styling */
+#menu1,
+#menu2,
+#menu4, 
+#menu5 {
+    height: 100vh;
+    width: 100vw;
+}
+
+#menu3 {
+    height: 170vh;
+    width: 100%;
+}
+
+/* #menu1{background-color: red;} */
+#menu2{padding-top: 60px;}
+#menu3{padding-top: 60px;}
+#menu4{padding-top: 60px;}
+#menu5{padding-top: 60px;}
+
+/* Home Styling */
+#menu1 {
+    background-image: url('../images/sareehorizontal3.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+#menu1 .container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 30vh;
+    bottom: 20%;
+    left: 10%;
+    line-height: 60px;
+}
+
+#menu1 .container p {
+    width: 100%;
+    font-size: 30px;
+    color: #d8d7d7;
+}
+
+#menu1 .container p span {
+    font-size: 45px;
+    color: rgb(209, 207, 207);
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    #menu1 {
+        background-image: url('../images/saree\ vertical.jpg');
+    }
+
+    #menu1 .container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #menu1 .container {
+        bottom: 30%;
+    }
+}
+
+/* Home Styling Finished */
+
+/* New In Styling Starts */
+
+#menu2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+#menu2 .menu2-title {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#menu2 .container {
+    width: 95%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#menu2 .container .picture {
+    min-width: 22%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    cursor: pointer;
+}
+
+#menu2 .container .picture .pic {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#menu2 .container .picture .pic img {
+    width: 100%;
+}
+
+#menu2 .container .picture .content {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu2 .container .picture .content p {
+    color: #585858;
+    font-size: 30px;
+    position: relative;
+}
+
+#menu2 .container .picture .new {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #fcfcfc;
+    font-weight: bold;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    background-color: #525151;
+}
+
+@media screen and (max-width: 1200px) {
+    #menu2 {
+        height: auto;
+        padding-top: 80px;
+    }
+
+    #menu2 .container .picture {
+        height: 80%;
+        min-width: 25%;
+        margin-bottom: 40px;
+    }
+
+    #menu2 .container {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #menu2 .container .picture .content p {
+        font-size: 24px;
+    }
+}
+
+/* New in styling Finish */
+
+#menu3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+}
+
+#menu3 .menu3-title {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#menu3 .container {
+    width: 85%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#menu3 .container .picture {
+    min-width: 22%;
+    height: 40%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#menu3 .container .picture .pic {
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#menu3 .container .picture .pic img {
+    width: 100%;
+    height: 100%;
+}
+
+#menu3 .container .picture .content {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu3 .container .picture .content p {
+    color: #585858;
+    font-size: 30px;
+    position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+    #menu3 {
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    #menu3 .container .picture {
+        height: 50%;
+        min-width: 25%;
+        margin-bottom: 20px;
+    }
+
+    #menu3 .container {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #menu3 .container .picture .content p {
+        font-size: 24px;
+    }
+}
+
+/* Festive wear Finished */
+
+/* collection styling starts */
+
+#menu4 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+#menu4 .menu4-title {
+    margin-bottom: 20px;
+}
+
+#menu4 .container {
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#menu4 .container .picture {
+    min-width: 300px;
+    height: 500px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#menu4 .container .picture .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background-color: #2b2b2b;
+}
+
+#menu4 .container .picture .content p {
+    font-size: 28px;
+    color: #fcfcfc;
+}
+
+#menu4 .container .picture .pic {
+    width: 100%;
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+}
+
+#menu4 .container .pic1 .pic {background-image: url('../images/wedding-dress.jpeg');}
+#menu4 .container .pic2 .pic {background-image: url('../images/mens-formal.jpg');}
+#menu4 .container .pic3 .pic {background-image: url('../images/mens-casual.jpg');}
+#menu4 .container .pic4 .pic {background-image: url('../images/kids-wear.jpg');}
+
+@media screen and (max-width: 1370px) {
+    #menu4 {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #menu4 .container .picture .content p {
+        font-size: 24px;
+    }
+}
+
+/* Collections Styling is Finished */
+
+/* Support Page Styling Starts */
+
+#menu5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(218, 216, 216);
+}
+
+#menu5 .container {
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu5 .container .links {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+#menu5 .container .links ul {
+    text-align: center;
+    line-height: 30px;
+    min-width: 300px;
+    margin: 0px auto 30px;
+}
+
+#menu5 .container .links ul .link-title {
+    color: #2b2b2b;
+}
+
+#menu5 .container .links ul li a {
+    color: #585858;
+}
+
+#menu5 .container .links ul li a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+#menu5 .container .follow {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu5 .container .follow .media {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#menu5 .container .follow .media .fa {
+    font-size: 30px;
+    color: #2b2b2b;
+}
+
+#menu5 .container .follow .media .fa:hover {
+    color: #8d8d8d;
+}
+
+@media screen and (max-width: 900px) {
+    #menu5 {
+        height: 130vh;
+    }
+
+    #menu5 .container .follow .media {
+        width: 70%;
+    }
+
+    #menu5 .container .follow .media .fa {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #menu5 .container .follow .media {
+        width: 80%;
+    }
+
+    #menu5 .container .follow .media .fa {
+        font-size: 22px;
+    }
+}
+
+/* Support Finished */
+
+/* Footer Starts */
+footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    font-size: 24px;
+    color: #8d8d8d;
+}
+
+footer p .fa {
+    margin: 0;
+    font-size: 28px;
+    width: 28px;
+    padding: 0;
+    color: #8d8d8d;
+}
+
+footer p .company {
+    color: #2b2b2b;
+}
+
+@media screen and (max-width: 900px) {
+    footer p {
+        line-height: 40px;
+    }
+
+    footer p .company {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer p  {
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+    footer p .fa {
+        font-size: 18px;
+        width: 18px;
+    }
+}
